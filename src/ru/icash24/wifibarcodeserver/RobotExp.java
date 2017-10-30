@@ -14,7 +14,7 @@ public class RobotExp {
 
         try {
             Robot robot = new Robot();
-            robot.delay(1000);
+
             for (int i = 0; i < args.length(); i++) {
                 ch=args.charAt(i);
                 switch (ch) {

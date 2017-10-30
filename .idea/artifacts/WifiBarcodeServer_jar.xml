@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WifiBarcodeServer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WifiBarcodeServer_jar</output-path>
+    <root id="archive" name="WifiBarcodeServer.jar">
+      <element id="module-output" name="WifiBarcodeServer" />
+    </root>
+  </artifact>
+</component>
