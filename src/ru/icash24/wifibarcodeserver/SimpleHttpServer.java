@@ -4,6 +4,7 @@ import com.sun.net.httpserver.*;
 import com.sun.net.httpserver.Authenticator;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.*;
 import java.util.Enumeration;
 
@@ -30,9 +31,6 @@ public class SimpleHttpServer {
         }
         HttpContext context = server.createContext("/", new EchoHandler());
         context.setAuthenticator(new Auth());
-
-
-
         server.setExecutor(null);
         server.start();
 
@@ -43,6 +41,11 @@ public class SimpleHttpServer {
         public void handle(HttpExchange exchange) throws IOException {
             RobotExp.type(exchange.getRequestURI().toString());
             exchange.sendResponseHeaders(200, 0);
+            String response = "Barcode server ready";
+            OutputStream os = exchange.getResponseBody();
+            os.write(response.getBytes());
+            os.close();
+
         }
     }
 
